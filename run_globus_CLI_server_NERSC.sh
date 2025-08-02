@@ -1,5 +1,14 @@
 # ====================== List of Projects to Sync Raw Data From ======================
 
+# aw 2025-07-31 20:19:38 - optogenetics pilot data - blank chip data
+# data: /mnt/ben-shalom_nas/raw_data/irc_maxone_desktop/media/harddrive8tb/CDKL5-R59X_MaxOnePlus_T1_05202025_PS/CDKL5-R59X_MaxOnePlus_T1_05202025_PS/250620/P002779
+# target: /pscratch/sd/a/adammwea/z_raw_data/irc_maxone_desktop/media/harddrive8tb/CDKL5-R59X_MaxOnePlus_T1_05202025_PS/CDKL5-R59X_MaxOnePlus_T1_05202025_PS/250620/P002779
+now=$(date +'%Y-%m-%d %H:%M:%S')
+globus transfer "$lab_server_endpoint:/mnt/ben-shalom_nas/raw_data/irc_maxone_desktop/media/harddrive8tb/CDKL5-R59X_MaxOnePlus_T1_05202025_PS/CDKL5-R59X_MaxOnePlus_T1_05202025_PS/250620/25196" \
+"$NERSC_DTN_endpoint:/pscratch/sd/a/adammwea/z_raw_data/irc_maxone_desktop/media/harddrive8tb/CDKL5-R59X_MaxOnePlus_T1_05202025_PS/CDKL5-R59X_MaxOnePlus_T1_05202025_PS/250620/25196" \
+--sync-level checksum --notify failed,inactive,succeeded \
+--label "Sync CDKL5-R59X_MaxOnePlus_T1_05202025_PS to NERSC - $now" --verbose
+
 # aw 2025-07-15 11:23:38 - optogenetics pilot data
 # data: /mnt/ben-shalom_nas/raw_data/irc_maxone_desktop/media/harddrive8tb/CDKL5-R59X_MaxOnePlus_T1_05202025_PS/CDKL5-R59X_MaxOnePlus_T1_05202025_PS/250620/P002779
 # target: /pscratch/sd/a/adammwea/z_raw_data/irc_maxone_desktop/media/harddrive8tb/CDKL5-R59X_MaxOnePlus_T1_05202025_PS/CDKL5-R59X_MaxOnePlus_T1_05202025_PS/250620/P002779
